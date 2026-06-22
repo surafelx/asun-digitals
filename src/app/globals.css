@@ -23,6 +23,10 @@ body {
   color: var(--foreground);
 }
 
+html.font-amharic body {
+  font-family: var(--font-noto-ethiopic), var(--font-geist-sans), sans-serif;
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(33, 28, 20, 0.08);

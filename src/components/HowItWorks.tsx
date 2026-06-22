@@ -1,38 +1,25 @@
-const steps = [
-  {
-    number: "01",
-    title: "Design",
-    description:
-      "Tell us about your business. We design a layout that fits your brand and industry.",
-  },
-  {
-    number: "02",
-    title: "Build",
-    description:
-      "We build your site with real content, responsive on every device, ready for review.",
-  },
-  {
-    number: "03",
-    title: "Launch",
-    description:
-      "You approve, we deploy. Hosting, SSL, and basic SEO are set up from day one.",
-  },
-];
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export default function HowItWorks() {
+  const { language } = useLanguage();
+  const t = translations[language].howItWorks;
+
   return (
     <section id="how-it-works" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            How It Works
+            {t.title}
           </h2>
           <p className="mt-4 inline-flex items-center gap-2 rounded-full glass px-5 py-2 text-sm text-gold-soft">
-            3 days from brief to live
+            {t.timeline}
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-3">
-          {steps.map((step) => (
+          {t.steps.map((step) => (
             <div
               key={step.number}
               className="glass rounded-2xl p-8 hover:bg-black/[0.03] transition-colors"
